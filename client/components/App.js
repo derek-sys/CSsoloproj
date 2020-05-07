@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import SignupPage from './signupPage';
 import LoginPage from './loginPage';
 import HomePage from './temp2';
+import SearchBar from './searchbar';
 //if (module && module.hot) module.hot.accept();
 
 export default function App() {
@@ -21,7 +22,10 @@ export default function App() {
               <Link to="/signup">SignUp</Link>
             </li>
             <li>
-              <Link to="/search">Search</Link>
+              <Link to="/search">Feeling Lucky?</Link>
+            </li>
+            <li>
+              <Link to="/searchbar">Search Bar</Link>
             </li>
           </ul>
         </nav>
@@ -34,6 +38,8 @@ export default function App() {
           <Route exact path="/signup" component={SignupPage} />
 
           <Route exact path="/search" component={HomePage} />
+
+          <Route exact path="/searchbar" component={SearchBar} />
 
           <Route path="/">
             <Home />

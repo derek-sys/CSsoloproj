@@ -10,8 +10,11 @@ const journalArticleBox = ({ info }) => {
         <h3 className="id">${id}</h3>
       </div>
       <ul className="abstract">
-        <p className="abstract">${abstract}</p>
+        <h6 className="abstract">${abstract}</h6>
       </ul>
+      <button id="buttons" type="submit">
+        Pull/Save
+      </button>
     </article>
   );
 };
