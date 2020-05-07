@@ -5,7 +5,7 @@ export default function LoginPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.target);
-    const url = '/api/user/login';
+    const url = '/api/user/register';
     fetch(url, {
       method: 'POST',
       body: data,
@@ -22,7 +22,7 @@ export default function LoginPage() {
         <input id="username" name="username" type="text" />
         <label htmlFor="password">Enter password</label>
         <input id="password" name="password" type="password" />
-        <button type="submit">Login</button>
+        <button type="submit">Sign UP</button>
       </form>
     </div>
   );

@@ -9,11 +9,6 @@ const userRouter = require('../user');
 
 const getstuff = `stuff 8fromstuff`;
 
-router.get('/', (req, res, next) => {
-  console.log('this thing works API');
-
-  res.status(200).send('hi');
-});
 ///search for
 // router.get('/users', userController.getUsers, (req, res, next) => {
 //   console.log(res.locals);
@@ -34,5 +29,10 @@ router.get('/', (req, res, next) => {
 
 router.use('/user', userRouter);
 
+router.get('/', (req, res, next) => {
+  console.log('this thing works API');
+
+  res.status(200).send('hi');
+});
 ////
 module.exports = router;

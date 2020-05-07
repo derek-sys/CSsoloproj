@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import SignupPage from './signupPage';
 import LoginPage from './loginPage';
-import HomePage from './temp2';
+//import LikesPage from './likesPage';
+import HomePage from './homepage';
 //if (module && module.hot) module.hot.accept();
 
 export default function App() {
@@ -21,6 +22,9 @@ export default function App() {
               <Link to="/signup">SignUp</Link>
             </li>
             <li>
+              <Link to="/likes">Likes</Link>
+            </li>
+            <li>
               <Link to="/search">Search</Link>
             </li>
           </ul>
@@ -29,15 +33,14 @@ export default function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/login" component={LoginPage} />
-
-          <Route exact path="/signup" component={SignupPage} />
-
-          <Route exact path="/search" component={HomePage} />
-
           <Route path="/">
             <Home />
           </Route>
+          <Route exact path="/signup" component={SignupPage} />
+
+          <Route exact path="/login" component={LoginPage} />
+
+          <Route exact path="/search" component={HomePage} />
         </Switch>
       </div>
     </Router>
