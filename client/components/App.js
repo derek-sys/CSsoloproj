@@ -4,6 +4,7 @@ import SignupPage from './signupPage';
 import LoginPage from './loginPage';
 import HomePage from './temp2';
 import SearchBar from './searchbar';
+import SubmitKeys from './SubmitKeys';
 //if (module && module.hot) module.hot.accept();
 
 export default function App() {
@@ -20,6 +21,9 @@ export default function App() {
             </li>
             <li>
               <Link to="/signup">SignUp</Link>
+            </li>
+            <li>
+              <Link to="/givekeys">Submit New Keys</Link>
             </li>
             <li>
               <Link to="/search">Feeling Lucky?</Link>
@@ -40,6 +44,8 @@ export default function App() {
           <Route exact path="/search" component={HomePage} />
 
           <Route exact path="/searchbar" component={SearchBar} />
+
+          <Route exact path="/givekeys" component={SubmitKeys} />
 
           <Route path="/">
             <Home />

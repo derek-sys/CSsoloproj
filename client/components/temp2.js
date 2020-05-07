@@ -58,7 +58,10 @@ class Articles extends Component {
     return (
       <section className="mainSection">
         <header className="pageHeader">
-          <h2>Here you go, you better appreciate this...</h2>
+          <h2>
+            Here you go, Morty, just be careful with it. A little knowledge can
+            be a dangerous thing...
+          </h2>
         </header>
         <div className="Container">{elements}</div>
       </section>

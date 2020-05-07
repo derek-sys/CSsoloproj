@@ -25,12 +25,14 @@ class Articles extends Component {
     console.log('state: ' + this.state.query);
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+    e.preventDefault();
     const DEFAULT_QUERY = this.state.query;
 
-    fetch(
-      `https://cors-anywhere.herokuapp.com/http://api.plos.org/search?q=everything:${DEFAULT_QUERY}&fl=id,abstract&wt-json`
-    )
+    axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/http://api.plos.org/search?q=everything:${DEFAULT_QUERY}&fl=id,abstract&wt-json`
+      )
       //.then((response) => response.json())
       .then((articles) => {
         console.log('this is line 28' + JSON.stringify(articles));
@@ -77,7 +79,10 @@ class Articles extends Component {
     return (
       <section className="mainSection">
         <header className="pageHeader">
-          <h2>Here you go, you better appreciate this...</h2>
+          <h2>
+            Here you go, Morty... Just be careful with it. a little knowledge
+            can be a dangerous thing.
+          </h2>
         </header>
         <div className="Container">{elements}</div>
       </section>

@@ -8,4 +8,45 @@ html {
 
 .reactsucks {
   color: whitesmoke;
+  border: 0px outset;
+  box-shadow: 30px 30px 30px whitesmoke inset;
+  margin: 10px 10px 10px 150px;
+}
+.articleContainer {
+  font-size: 30px;
+}
+.abstract {
+  font-size: x-large;
+}
+.id {
+  font-size: larger;
+  color: black;
+}
+
+.mainSection {
+  color: whitesmoke;
+  width: 60vw;
+  display: flex;
+  justify-content: center;
+  padding-left: 100 px;
+}
+.h2 {
+  font-size: x-large;
+}
+#buttons {
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  color: whitesmoke;
+  background-color: teal;
+  font-size: 25px;
+}
+
+.plos {
+  color: whitesmoke;
+  font-size: 80px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: lighter;
+}
+.pageHeader > h2 {
+  font-size: x-large;
 }
