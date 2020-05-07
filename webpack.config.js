@@ -14,7 +14,7 @@ module.exports = {
     port: 8080,
     hot: true,
   },
-  entry: ['./client/index.js'],
+  entry: './client/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
@@ -42,7 +42,7 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          //'style-loader',
+          // 'style-loader',
           MiniCssExtractPlugin.loader,
           // Translates CSS into CommonJS
           'css-loader',

@@ -1,9 +1,18 @@
 const cookieController = {};
 
 cookieController.setSessionCookie = (req, res, next) => {
-  const { token } = res.locals;
-  res.cookie('token', token);
-  next();
+  try {
+    const { token } = res.locals;
+    res.cookie('token', token);
+    console.log('setsessioncookie token' + token);
+    next();
+  } catch (err) {
+    next({
+      log: err,
+      status: 500,
+      message: 'error in sessioncookie',
+    });
+  }
 };
 
 /**

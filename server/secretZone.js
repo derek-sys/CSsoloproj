@@ -1,1 +1,3 @@
-//SECRET goes here
+// SECRET goes here
+module.exports =
+  'ejhrbgwiu45thiuerghoi5twoe5uhw4i5hw4e95htw4985ht4e9thuw4e89th5we4i89h4epo8heot8hwe4t8hwp4etuignbskdjnfgbsilutrhwitu5hw49et8w4e9utwyh5sdklfjbs';

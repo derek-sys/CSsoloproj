@@ -15,24 +15,24 @@ router.get('/', (req, res, next) => {
   res.status(200).send('hi');
 });
 ///search for
-router.get('/users', userController.getUsers, (req, res, next) => {
-  console.log(res.locals);
+// router.get('/users', userController.getUsers, (req, res, next) => {
+//   console.log(res.locals);
 
-  res.status(200).send('hi');
-});
+//   res.status(200).send('hi');
+// });
 
-router.get(
-  '/login',
-  sessionController.isLoggedIn,
-  cookieController.setSSIDCookie,
-  (req, res, next) => {
-    console.log(res.locals);
+// router.get(
+//   '/login',
+//   sessionController.isLoggedIn,
+//   cookieController.setSSIDCookie,
+//   (req, res, next) => {
+//     console.log(res.locals);
 
-    res.status(200).send('hi');
-  }
-);
+//     res.status(200).send('hi');
+//   }
+// );
 
-//router.use('/user', userRouter);
+router.use('/user', userRouter);
 
 ////
 module.exports = router;

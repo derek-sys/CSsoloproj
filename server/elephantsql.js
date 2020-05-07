@@ -1,5 +1,5 @@
-var pg = require('pg');
-var { Pool, Client } = require('pg');
+const pg = require('pg');
+const { Pool, Client } = require('pg');
 
 const PG_URI =
   'postgres://vpztvjgv:GVtqCfzky4ysLrbhEPcxeoVVvZUr-IZk@drona.db.elephantsql.com:5432/vpztvjgv';

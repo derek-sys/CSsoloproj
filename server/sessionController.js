@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken');
 const db = require('./elephantsql.js');
-
+const TOKEN = require('./secretZone');
 const sessionController = {};
 
 /**
- * isLoggedIn - find the appropriate session for this request in the database, then
+ * session for this request in the database, then
  * verify whether or not the session is still valid.
  */
 sessionController.isLoggedIn = (req, res, next) => {
@@ -60,9 +60,17 @@ sessionController.unLike = (req, res, next) => {
 };
 
 sessionController.signToken = (req, res, next) => {
-  const { username } = res.query;
-  res.locals.token = jwt.sign(username, TOKEN_SECRET, { expiresIn: '1800s' });
-  next();
+  try {
+    const { id } = res.locals;
+    res.locals.token = jwt.sign({ id }, TOKEN, { expiresIn: '1800s' });
+    next();
+  } catch (err) {
+    next({
+      log: `error in signtoken ${err}`,
+      status: 500,
+      message: 'messed up in making your jwt',
+    });
+  }
 };
 
 module.exports = sessionController;

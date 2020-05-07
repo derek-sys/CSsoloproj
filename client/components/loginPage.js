@@ -1,19 +1,25 @@
 import React from 'react';
+import { useState } from 'react';
+import { redirect } from 'react-router-dom';
 
 export default function LoginPage() {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('event', event);
-    const form = event.target;
-    console.log(form);
-    const data = new FormData(form);
-    for (var [key, value] of data.entries()) {
-      console.log(key, value);
-    }
+    const data = new FormData(event.target);
+    const url = '/api/user/register';
+    await fetch(url, {
+      method: 'POST',
+      body: data,
+    });
+
+    // .then((res) => res.json())
+    // .catch((error) => console.error('Error:', error))
+    //  .then((response) => console.log('Success:', response));
   };
+  //encType="multipart/form-data"
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} encType="multipart/form-data">
         <label htmlFor="username">Enter username</label>
         <input id="username" name="username" type="text" />
         <label htmlFor="password">Enter password</label>
