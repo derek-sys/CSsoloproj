@@ -50,3 +50,11 @@ html {
 .pageHeader > h2 {
   font-size: x-large;
 }
+
+#username {
+  color: whitesmoke;
+}
+
+#password {
+  color: whitesmoke;
+}
